@@ -15,7 +15,7 @@ This repository contains:
 
 ### Requirements
 
-* pthon 3.6+
+* python 3.6+
 * pytorch >=1.6, torchvision, OpenCV-Python, tqdm
 * Tested on pyTorch 1.7.1
 
