@@ -1,14 +1,12 @@
-# MobileSal
+# EDN
 
-[IEEE TIP 2021: EDN: Salient Object Detection viaExtremely-Downsampled Network](https://ieeexplore.ieee.org/document/9647954)
+[IEEE TIP 2021: EDN: Salient Object Detection viaExtremely-Downsampled Network]
 
-This repository contains full training & testing code, and pretrained saliency maps. We have achieved competitive performance on the RGB-D salient object detection task with a speed of 450fps.
 
 If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository.
 
 My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
 
-[[PDF]](https://mftp.mmcheng.net/Papers/21PAMI_MobileSal.pdf)
 
 This repository contains:
 
