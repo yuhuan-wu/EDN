@@ -1,6 +1,6 @@
 # EDN
 
-[IEEE TIP 2021: EDN: Salient Object Detection viaExtremely-Downsampled Network]
+[IEEE TIP 2021, EDN: Salient Object Detection via Extremely-Downsampled Network]()
 
 
 If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository.
