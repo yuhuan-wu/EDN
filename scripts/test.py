@@ -73,7 +73,7 @@ def main(args, file_list):
         new_keys.append(key.replace('module.', ''))
         new_values.append(value)
     new_dict = OrderedDict(list(zip(new_keys, new_values)))
-    model.load_state_dict(new_dict)
+    model.load_state_dict(new_dict, strict=False)
 
     if args.gpu:
         model = model.cuda()
