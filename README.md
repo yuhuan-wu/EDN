@@ -72,7 +72,7 @@ If you cannot run `bash scripts/prepare_data.sh`, please first download the imag
 
 It is very simple to train our network. We have prepared a script to train EDN-Lite:
 ```
-bash ./tools/train.sh
+bash ./scripts/train.sh
 ```
 
 To train EDN-VGG16 or EDN-R50, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details (very simple).
