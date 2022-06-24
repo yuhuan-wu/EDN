@@ -2,6 +2,7 @@
 
 [IEEE TIP 2022, EDN: Salient Object Detection via Extremely-Downsampled Network](https://arxiv.org/abs/2012.13093)
 
+中文版下载地址：[中文版](https://mmcheng.net/wp-content/uploads/2022/06/21TIP_EDN_CN.pdf)
 
 If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository.
 
@@ -10,8 +11,9 @@ My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
 
 This repository contains:
 
-- [x] Full code, data, pretrained models for `training` and `testing`
-- [x] Fast preparation script
+- [x] Full code, data for `training` and `testing`
+- [x] Pretrained models based on VGG16, ResNet-50, and MobileNetV2
+- [x] Fast preparation script (based on github release)
 
 ### Requirements
 
@@ -33,7 +35,8 @@ Simply run:
 bash one-key-run.sh
 ```
 
-It will download all data, evaluate all models, produce all saliency maps to `salmaps/` folder,  and train `EDN-Lite` automatically.
+It will download all data, evaluate all models, produce all saliency maps to `salmaps/` folder,  and train `EDN-Lite` automatically. 
+**Note that this script requires that you have a good downloading speed on GitHub.**
 
 
 ### Data Preparing
@@ -42,12 +45,12 @@ It will download all data, evaluate all models, produce all saliency maps to `sa
 ```
 bash scripts/prepare_data.sh
 ```
-The script will prepare the datasets, imagenet-pretrained models, and pretrained models of EDN/EDN-Lite.
-
+The script will prepare the datasets, imagenet-pretrained models, and pretrained models of EDN/EDN-Lite. 
+If you suffer from slow downloading rate and luckily you have a proxy, a powerful tool [Proxychains4](https://github.com/rofl0r/proxychains-ng) can help you to execute the script through your own proxy by running the following command: `proxychains4 bash scripts/prepare_data.sh`.
 
 If you have a low downloading speed, please download the training data manually: 
 
-* Preprocessed data of 6 datasets: [[Google Drive]](https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing), [[Baidu Pan]]()
+* Preprocessed data of 6 datasets: [[Google Drive]](https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing), [[Baidu Pan, ew9i]](https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i)
 
 We have processed the data well so you can use them without any preprocessing steps. 
 After completion of downloading, extract the data and put them to `./data/` folder:
