@@ -9,7 +9,7 @@ PYTHONPATH=$(pwd):$PYTHONPATH python3 scripts/train.py --max_epochs 30 \
                                                     --lr 1.7e-4 \
                                                     --width 384 \
                                                     --height 384 \
-                                                    --iter_size 2 \
+                                                    --iter_size 1 \
                                                     --arch mobilenetv2 \
                                                     --ms 1 \
                                                     --ms1 0 \
