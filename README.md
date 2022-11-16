@@ -8,6 +8,7 @@ If you run into any problems or feel any difficulties to run this code, do not h
 
 My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
 
+:fire: News! We updated the code with [P2T](https://arxiv.org/abs/2106.12011) transformer bacbone. It achieves much higher result than the original EDN with ResNet-50! you can download the saliency maps and pretrained models from github release of this repository.
 
 This repository contains:
 
@@ -105,14 +106,13 @@ For covenience, we provide the pretrained saliency maps on several datasets by:
 
 * Running the command `bash scripts/prepare_salmaps.sh` to download them to `salmaps` folder.
 * Or downloading them manually: [[Google Drive]](https://drive.google.com/drive/folders/1MymUy-aZx_45YJSOPd3GQjwel-YBTUPX?usp=sharing), [[Baidu Pan, c9zm]](https://pan.baidu.com/s/1HAZTrJhIkw8JdACN_ChGWA?pwd=c9zm)
-
+* Now we have included all saliency maps of EDN varies, including EDN-VGG16, EDN-ResNet-50, **EDN-P2T-Small**, EDN-Lite, and EDN-LiteEX.
 
 
 ### Others 
 
 #### TODO
 
-1. Add results with the [P2T](https://arxiv.org/abs/2106.12011) transformer backbone.
 
 #### Contact
 
