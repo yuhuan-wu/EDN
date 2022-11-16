@@ -5,7 +5,10 @@ from models.utils import ConvBNReLU, ReceptiveConv
 from models.vgg import vgg16
 from models.resnet import resnet50, resnet101, resnet152, Bottleneck
 from models.MobileNetV2 import mobilenetv2
-
+try:
+    from models.p2t import p2t_tiny, p2t_small
+except:
+    print("P2T code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
 
 class InvertedResidual(nn.Module):
     def __init__(self, inp, oup, stride=1, expand_ratio=4, residual=True):
@@ -51,7 +54,7 @@ def conv1x1(in_planes, out_planes, stride=1):
 
 
 class EDN(nn.Module):
-    def __init__(self, arch='mobilenetv2', pretrained=None, use_carafe=True,
+    def __init__(self, arch='mobilenetv2', pretrained=True, use_carafe=True,
                  enc_channels=[64, 128, 256, 512, 512, 256, 256],
                  dec_channels=[32, 64, 128, 128, 256, 256, 256], freeze_s1=False):
         super(EDN, self).__init__()
@@ -67,10 +70,14 @@ class EDN(nn.Module):
         elif 'mobilenetv2' in arch:
             enc_channels=[16, 24, 32, 96, 160, 40, 40]
             dec_channels=[16, 24, 32, 40, 40, 40, 40]
+        elif 'p2t_small' in arch:
+            enc_channels=[64, 128, 320, 512, 256, 256]
+            dec_channels=[32, 64, 128, 256, 128, 128]
+        
 
         use_dwconv = 'mobilenet' in arch
         
-        if 'vgg' in arch:
+        if 'vgg' in arch or 'p2t' in arch:
             self.conv6 = nn.Sequential(nn.MaxPool2d(2,2,0),
             ConvBNReLU(enc_channels[-3], enc_channels[-2]),                                   
                                        ConvBNReLU(enc_channels[-2], enc_channels[-2], residual=False),
@@ -145,13 +152,14 @@ class EDN(nn.Module):
                 p.requires_grad = False
 
     def forward(self, input):
-        conv1, conv2, conv3, conv4, conv5 = self.backbone(input)
         
-        conv6 = self.conv6(conv5)
-        conv7 = self.conv7(conv6)
-        attention = torch.sigmoid(self.gap(conv7))
+        backbone_features = self.backbone(input)
+        
+        ed1 = self.conv6(backbone_features[-1])
+        ed2 = self.conv7(ed1)
+        attention = torch.sigmoid(self.gap(ed2))
 
-        features = self.fpn([conv1, conv2, conv3, conv4, conv5, conv6, conv7], attention)
+        features = self.fpn(backbone_features + [ed1, ed2], attention)
         
         saliency_maps = []
         for idx, feature in enumerate(features[:5]):
@@ -161,6 +169,7 @@ class EDN(nn.Module):
                     mode='bilinear',
                     align_corners=False)
             )
+            # p2t can alternatively use features of 4 levels. Here 5 levels are applied.
 
         return torch.sigmoid(torch.cat(saliency_maps, dim=1))
 

@@ -109,6 +109,8 @@ if __name__ == '__main__':
         args.arch = 'vgg16'
     elif 'R50' in args.pretrained:
         args.arch = 'resnet50'
+    elif 'P2T-S' in args.pretrained:
+        args.arch = 'p2t_small'
     else:
         raise NotImplementedError("recognized unknown backbone given the model_path")
     
@@ -120,7 +122,7 @@ if __name__ == '__main__':
     print('Called with args:')
     print(args)
 
-    data_lists = ['DUTS-TE', 'DUT-OMRON', 'ECSSD', 'PASCAL-S', 'HKU-IS']
+    data_lists = ['DUTS-TE', 'DUT-OMRON', 'ECSSD', 'PASCAL-S', 'HKU-IS', 'SOD']
     for data_list in data_lists:
         print("processing ", data_list)
         main(args, data_list)

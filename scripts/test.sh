@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAMES=('EDN-Lite' 'EDN-VGG16' 'EDN-R50' 'EDN-LiteEX')
+NAMES=('EDN-P2T-S' 'EDN-Lite' 'EDN-VGG16' 'EDN-R50' 'EDN-LiteEX')
 
 for NAME in "${NAMES[@]}"
 do
