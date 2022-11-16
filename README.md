@@ -13,7 +13,7 @@ My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
 This repository contains:
 
 - [x] Full code, data for `training` and `testing`
-- [x] Pretrained models based on VGG16, ResNet-50, and MobileNetV2
+- [x] Pretrained models based on VGG16, ResNet-50, [P2T-Small](https://arxiv.org/abs/2106.12011) and MobileNetV2
 - [x] Fast preparation script (based on github release)
 
 ### Requirements
