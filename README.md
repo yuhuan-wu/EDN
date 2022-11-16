@@ -8,7 +8,7 @@ If you run into any problems or feel any difficulties to run this code, do not h
 
 My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
 
-:fire: News! We updated the code with [P2T](https://arxiv.org/abs/2106.12011) transformer bacbone. It achieves much higher result than the original EDN with ResNet-50! you can download the saliency maps and pretrained models from github release of this repository.
+:fire: News! We updated the code with [P2T](https://arxiv.org/abs/2106.12011) transformer bacbone. It achieves much higher result than the original EDN with ResNet-50! you can download the [saliency maps](https://github.com/yuhuan-wu/EDN/releases/download/v1.0/EDN-P2T-S.zip) and [pretrained model](https://github.com/yuhuan-wu/EDN/releases/download/v1.0/EDN-P2T-S.pth) from github release of this repository.
 
 This repository contains:
 
