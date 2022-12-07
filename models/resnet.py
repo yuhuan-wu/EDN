@@ -169,7 +169,7 @@ class ResNet(nn.Module):
         c4 = self.layer3(c3)
         c5 = self.layer4(c4)
 
-        return c1, c2, c3, c4, c5
+        return [c1, c2, c3, c4, c5]
 
 def resnet18(pretrained=None, **kwargs):
     r"""ResNet-18 model from

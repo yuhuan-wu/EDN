@@ -51,7 +51,7 @@ class VGG16BN(nn.Module):
         conv5_2 = self.conv5_2(conv5_1)
         conv5_3 = self.conv5_3(conv5_2)
 
-        return conv1_2, conv2_2, conv3_3, conv4_3, conv5_3
+        return [conv1_2, conv2_2, conv3_3, conv4_3, conv5_3]
 
 
 def vgg16(pretrained=True):

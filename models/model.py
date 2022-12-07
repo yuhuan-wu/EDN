@@ -8,7 +8,7 @@ from models.MobileNetV2 import mobilenetv2
 try:
     from models.p2t import p2t_tiny, p2t_small
 except:
-    print("P2T code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
+    print("EDN-P2T code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
 
 class InvertedResidual(nn.Module):
     def __init__(self, inp, oup, stride=1, expand_ratio=4, residual=True):
