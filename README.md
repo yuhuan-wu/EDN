@@ -99,6 +99,7 @@ bash ./tools/test.sh
 
 The scripts will automatically generate saliency maps on the `salmaps/` directory.
 
+* For computing Fbw, S-m, and E-m measures, please use the official MATLAB code to generate the results: [Download Code Here](https://github.com/yuhuan-wu/EDN/files/13497335/fbw-sm-em.zip).
 
 #### Pre-computed Saliency maps
 
