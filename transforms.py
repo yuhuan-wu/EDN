@@ -4,6 +4,7 @@ import random
 import cv2
 import torch.nn.functional as F
 
+cv2.setNumThreads(1) # If not set, the training speed might be very slow in some circumstances.
 
 class Scale(object):
     """
